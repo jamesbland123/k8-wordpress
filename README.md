@@ -90,9 +90,11 @@ $ helm install --name company-test2 -f company-test2.yaml --set persistence.stor
 
 Take note of the output on each command. There is additional information on how to obtain the connection URL and password you will need to login to the site and to Wordpress admin section.
 
+> To create a 3rd company or environment.  Copy company-test1.yaml, edit, and install with helm install --name ... Look at one of the above lines for company-test1 or test2 for an example.
+
 For Wordpress the default login is user and the password can be obtained using ```kubectl get secret --namespace default company-test1-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode```
 
-## Deploy metrics server and setup HPA
+## Deploy metrics server and setup HPA (Optional)
 
 
 ### Custom and external metrics: 
